@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+   /* Layout 
+   - Mobile width: 375px; 
+   - Desktop width: 1440px;
+   */
+
+   /* Colors */
+   --col-pri-white: hsl(0, 0%, 100%);
+   --col-pri-black: hsl(0, 0%, 0%); --col-pri-dark-gray1:  hsl(0, 0%, 55%);
+   --col-pri-dark-gray2: hsl(0, 0%, 41%);
+   
+   /* Body */
+   --body-font-size: 15px; 
+
+   /* Fonts */
+   --font-family-alata: "Alata";
+   --font-family-alata-weight: 400;
+   --font-family-josefin: "Josefin Sans";
+   --font-family-josefin-weight: 300;
+}
+
+/* ---Resetting--- */
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Generic flex and grid class */
+.flex-container {
+    display: flex;
+}
+
+.grid-container {
+    display: grid;
+}
+
+/* Generic content wraper */
+.content-wraper {
+    max-width:  700px;
+    margin: 0 auto;
+}
+
+/* Detail css */
+/* container */
+.container {
+    width: 100%;
+}
+
+/* Header */
+header {
+    flex: 0 1 auto;
+    height: auto;
+    background-image: url('images/desktop/image-hero.jpg');
+}
+
+/** Navigation **/
+nav .content-wraper {
+    font-family: var(--font-family-alata);
+    font-weight: var(--font-family-alata-weight);
+    color: var(--col-pri-white);
+}
+
+nav .content-wraper {
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .content-wraper .nav-logo {
+    font-size: 2em;
+}
+
+nav .content-wraper ul {
+    gap: 25px
+}
+
+nav .content-wraper a {
+    color: var(--col-pri-white);
+}
+
+/** Hero **/
+.hero {
+    padding: 5em 0;
+}
+
+.hero .grid-container {
+    grid-template-columns: 1fr 50%;
+}
+
+.hero .content-wraper {
+    font-family: var(--font-family-josefin);
+    font-weight: var(--font-family-josefin-weight);
+    font-size: 3em;
+    color: var(--col-pri-white);
+}
+
+.hero .grid-container .grid-item {
+    padding: 0.5em 1.2em;
+    border: 1px solid white;
+    grid-column: 1 / 2;
+}
+
+/* main */
+main {
+    flex: 1 1 auto;
+}
+
+/* footer */
+footer {
+    flex: 0 1 auto;
+}
