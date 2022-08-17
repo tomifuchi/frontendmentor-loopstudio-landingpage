@@ -52,7 +52,7 @@ body {
 
 /* Generic content wraper */
 .content-wraper {
-    max-width:  1008px;
+    max-width:  1140px;
     margin: 0 auto;
 }
 
@@ -119,37 +119,138 @@ main {
 can be done with name lines */
 /* Minmax(1fr, auto) make sure the img stays inside
 the grid */
+.interactive {
+    min-height: 100vh;;
+    padding: 4.5em 0;
+}
 .interactive .grid-container {
-    height: 100vh;
-    grid-template-columns: repeat(6, minmax(1fr, auto));
-    grid-template-rows: repeat(3, minmax(1fr,auto));
+    grid-template-columns: repeat(3 , minmax(1fr, auto));
+    grid-template-rows: repeat(3 , minmax(1fr, auto));
 }
 
 .interactive .grid-container .grid-item.thumb{
-    grid-column: 1 / 5;
-    grid-row: 1 / 4;
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
 }
 
 .interactive .grid-container .grid-item.intro {
-    grid-column: 4 / 8;
+    grid-column: 2 / 4;
     grid-row: 2 / 4;
 }
 
 .interactive .grid-container .grid-item.intro {
-    border: 1px solid #000;
+    /* Grid item setting */
+    align-self: end;
+    justify-self: end;
+
+
     background-color: var(--col-pri-white);
     font-family: var(--font-family-josefin);
 
-    line-height: 1.25;
+    /* Flex setting */
+    align-items: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+    gap: 25px;
+
+    padding: 5em;
 }
 
 .interactive .grid-container .grid-item.intro .intro-tittle{
-    font-size: 2.5em;
+    color: var(--col-pri-dark-gray2);
+    font-size: 3.5em;
 }
 .interactive .grid-container .grid-item.intro .intro-detail{
     color: var(--col-pri-dark-gray2);
+    line-height: 1.25;
+    font-size: 1.2em;
+}
+
+/** Showcase **/
+.showcase .showcase-all {
+    font-family: var(--font-family-josefin);
+    font-size: 2.75em;
+    justify-content: space-between;
+    align-items:center;
+
+    padding: 2em 0;
+}
+
+.showcase .showcase-all button {
+    font-family: var(--font-family-alata);
+    font-size: initial;
+    color: var(--col-pri-black);
+    letter-spacing: 5px;
+    background-color: var(--col-pri-white);
+    border: 2px solid var(--col-pri-black);
+    border-radius: 3px;
+    padding: 0.5em 2.75em;
+}
+
+.showcase-item-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    gap: 25px 25px;
+}
+
+.showcase-item-container .showcase-item{
+    height:60vh; 
+
+    /* flex setting */
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    background-size: cover;
+    padding: 0 0 2.5em 2.5em;
+}
+
+.showcase-item-container .showcase-item a{
+    font-family: var(--font-family-alata);
+    font-weight: var(--font-family-alata-weight);
+    font-size: 2.5em;
+    color: var(--col-pri-white);
+
+/* I should wrap this shit in a div, but meh */
+    width: 75%;
+    display: flex;
+    flex-flow: row wrap;
+}
+.showcase-item-container .one {
+    background-image: url('images/desktop/image-deep-earth.jpg');
+}
+.showcase-item-container .two{
+    background-image: url('images/desktop/image-night-arcade.jpg');
+}
+.showcase-item-container .three{
+    background-image: url('images/desktop/image-soccer-team.jpg');
+}
+.showcase-item-container .four{
+    background-image: url('images/desktop/image-grid.jpg');
+}
+.showcase-item-container .five{
+    background-image: url('images/desktop/image-from-above.jpg');
+}
+.showcase-item-container .six{
+    background-image: url('images/desktop/image-pocket-borealis.jpg');
+}
+.showcase-item-container .seven{
+    background-image: url('images/desktop/image-curiosity.jpg');
+}
+.showcase-item-container .eight{
+    background-image: url('images/desktop/image-fisheye.jpg');
 }
 
 /* footer */
 footer {
+    background-color: var(--col-pri-black);
+    color: var(--col-pri-white);
 }
+
+footer .flex-container{
+    justify-content: space-between;
+}
+
+/* Left nav */
+
+/* Right nav */
