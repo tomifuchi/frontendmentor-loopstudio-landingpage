@@ -157,7 +157,7 @@ the grid */
 }
 
 .interactive .grid-container .grid-item.intro .intro-tittle{
-    color: var(--col-pri-dark-gray2);
+    color: var(--col-pri-black);
     font-size: 3.5em;
 }
 .interactive .grid-container .grid-item.intro .intro-detail{
@@ -167,13 +167,17 @@ the grid */
 }
 
 /** Showcase **/
+.showcase {
+    padding-bottom: 7em;
+}
 .showcase .showcase-all {
     font-family: var(--font-family-josefin);
+    color: var(--col-pri-black);
     font-size: 2.75em;
     justify-content: space-between;
     align-items:center;
 
-    padding: 2em 0;
+    padding-bottom: 2em;
 }
 
 .showcase .showcase-all button {
@@ -206,8 +210,8 @@ the grid */
 }
 
 .showcase-item-container .showcase-item a{
-    font-family: var(--font-family-alata);
-    font-weight: var(--font-family-alata-weight);
+    font-family: var(--font-family-josefin);
+    font-weight: 10;
     font-size: 2.5em;
     color: var(--col-pri-white);
 
@@ -245,12 +249,61 @@ the grid */
 footer {
     background-color: var(--col-pri-black);
     color: var(--col-pri-white);
+    padding: 3em  0;
+
+    font-family: var(--font-family-alata);
 }
 
-footer .flex-container{
-    justify-content: space-between;
+footer a {
+    color: var(--col-pri-white);
 }
 
-/* Left nav */
+footer .grid-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "logo scmedia"
+    "links cpright"
+    ;
+    align-items: center;
+}
 
-/* Right nav */
+footer .grid-container .grid-item.nav-links {
+    grid-area: links;
+}
+
+footer .grid-container .grid-item.nav-logo {
+    grid-area: logo;
+}
+
+footer .grid-container .grid-item.socialmedia {
+    grid-area: scmedia;
+}
+
+footer .grid-container .grid-item.copyright {
+    grid-area: cpright;
+}
+
+/* Detail css of the footer */
+/**  Logo **/
+footer .grid-container .grid-item.nav-logo {
+    font-family: var(--font-family-alata);
+    font-weight: var(--font-family-alata-weight);
+    color: var(--col-pri-white);
+
+    font-size: 2em;
+}
+/** Social media **/
+footer .grid-container .grid-item.socialmedia.flex-container{
+    justify-content: end;
+    gap: 20px;
+}
+/** Copyright **/
+footer .grid-container .grid-item.copyright {
+    color: var(--col-pri-dark-gray2);
+    justify-self: end;
+}
+/** Links **/
+footer .grid-container .grid-item.nav-links {
+    gap: 30px;
+}

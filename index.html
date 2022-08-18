@@ -14,8 +14,12 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
+    .attribution { font-size: 11px; text-align: center; padding: 2em 0;}
     .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution {
+      justify-content: center;
+      align-items: center;
+    }
   </style>
 </head>
 <body>
@@ -82,27 +86,30 @@
   </main>
 
   <footer>
-    <div class="flex-container content-wraper">
-    <nav>
-      <ul class="flex-container">
+    <div class="grid-container content-wraper">
+      <div class="grid-item nav-logo">loopstudios</div>
+      <ul class="grid-item flex-container nav-links">
         <li><a href="#">About</a></li>
         <li><a href="#">Careers</a></li>
         <li><a href="#">Events</a></li>
         <li><a href="#">Products</a></li>
         <li><a href="#">Support</a></li>
       </ul>
-    </nav>
-    <nav class="footer social-media">
-      <div class="content-wraper"></div>
-      © 2021 Loopstudios. All rights reserved.
-    </nav>
+      <ul class="grid-item flex-container socialmedia">
+        <li><a href="#"><img src="./images/icon-facebook.svg" alt=""></a></li>
+        <li><a href="#"><img src="./images/icon-instagram.svg" alt=""></a></li>
+        <li><a href="#"><img src="./images/icon-pinterest.svg" alt=""></a></li>
+        <li><a href="#"><img src="./images/icon-twitter.svg" alt=""></a></li>
+      </ul>
+      <p class="grid-item copyright">© 2021 Loopstudios. All rights reserved.</p>
     </div>
-  </footer>
-
-
-  <div class="attribution">
+    <div class="flex-container attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+
+  </footer>
+
+
 </body>
 </html>
