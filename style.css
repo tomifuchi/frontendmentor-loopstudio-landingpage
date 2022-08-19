@@ -63,6 +63,7 @@ body {
 header {
     background-image: url('images/desktop/image-hero.jpg');
     padding: 2em 0;
+    border: 1px solid pink;
 }
 
 /** Navigation **/
@@ -109,6 +110,28 @@ nav .content-wraper li:hover::before {
 
 nav .content-wraper a {
     color: var(--col-pri-white);
+}
+
+/* For the hamburger button when swtich to mobile layout */
+header .flex-container.content-wraper{
+    /* Just for the hamburger have somewhere to park */
+    position: relative;
+}
+
+header nav .mb-menu-btn {
+    position: absolute;
+    height: 20px;
+    width: 30px;
+    top: 0.95em;
+    right: 1em;
+    display: none;
+    flex-direction: column;;
+    justify-content: space-between;
+}
+header nav .mb-menu-bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
 }
 
 /** Hero **/
@@ -279,6 +302,8 @@ https://www.youtube.com/watch?v=lRPguPbovro&t=81s
 */
 .showcase-item-container .showcase-item:hover{
     position: relative;
+    /* Reorder stacking ? This was
+    told to have less side effects */
     isolation: isolate;
 }
 
@@ -286,6 +311,8 @@ https://www.youtube.com/watch?v=lRPguPbovro&t=81s
     color: var(--col-pri-black);
 }
 
+/* Basically give this an overlay then
+opacity the overlay */
 .showcase-item-container .showcase-item:hover::after{
     content: '';
     position: absolute;
@@ -361,18 +388,93 @@ footer .grid-container .grid-item.nav-links {
 /** A fucking hack just to get bottom shorten border 
 It could be coded to be use as a class but meh.
 */
-footer .grid-container .grid-item.nav-links li{
+footer .grid-container .grid-item.nav-links li, 
+footer .grid-container .grid-item.socialmedia li {
     padding: 5px;
 }
-footer .grid-container .grid-item.nav-links li{
+footer .grid-container .grid-item.nav-links li, 
+footer .grid-container .grid-item.socialmedia li{
     position: relative;
 }
 
-footer .grid-container .grid-item.nav-links:hover li:hover::before{
+footer .grid-container .grid-item.nav-links li:hover::before, 
+footer .grid-container .grid-item.socialmedia li:hover::before{
     content: '';
     position: absolute;
     bottom: 0;
     left: 25%;
     border-bottom: 2px solid var(--col-pri-white);
     width: 50%;
+}
+
+/* Mobile layout */
+@media (max-width: 375px){
+    .content-wraper {
+        max-width: 356px;
+    }
+
+    /* Header */
+    /* The fucking nav and transitioning to mobile layout */
+    header {
+        padding: 0;
+    }
+
+    header nav .mb-menu-btn {
+        display: flex;
+    }
+
+    header .flex-container.content-wraper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header .flex-container.nav-links {
+        display: none;
+        flex-direction: column;
+        border: 1px solid #000;
+        width: 100%;
+    }
+
+    header .flex-container.nav-links.active{
+        background-color: var(--col-pri-black);
+        display: flex;
+        border: 1px solid white;
+    }
+
+    header nav.active{
+        background-color: var(--col-pri-black);
+        height: 100vh;
+    }
+    header nav.active .flex-container.content-wraper{
+        gap: 25px;
+    }
+
+    /* Fucking hamburger animation */
+    header .mb-menu-bar:nth-child(1).active{
+        transition: 0.3s;
+        transform: translateY(220%) rotate(-45deg);
+    }
+    header .mb-menu-bar:nth-child(2).active{
+        transition: 0.3s;
+        transform: scale(0);
+    }
+    header .mb-menu-bar:nth-child(3).active{
+        transition: 0.3s;
+        transform: translateY(-320%) rotate(45deg);
+    }
+
+    header .mb-menu-bar:nth-child(1){
+        transition: 0.3s;
+        transform: translateY(0) rotate(0);
+    }
+    header .mb-menu-bar:nth-child(2){
+        transition: 0.3s;
+        transform: scale(1);
+    }
+    header .mb-menu-bar:nth-child(3){
+        transition: 0.3s;
+        transform: translateY(0) rotate(0);
+    }
+
+    /** Hero **/
 }
