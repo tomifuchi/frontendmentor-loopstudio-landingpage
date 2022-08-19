@@ -31,6 +31,7 @@ ul {
 }
 
 a {
+    position: relative;
     text-decoration: none;
 }
 
@@ -82,6 +83,28 @@ nav .content-wraper .nav-logo {
 
 nav .content-wraper ul {
     gap: 25px;
+}
+
+/* This is a fucking hack 
+From this here: 
+https://programmersportal.com/css/how-to/adjust-border-length.php
+*/
+
+nav .content-wraper li{
+    padding: 5px;
+}
+
+nav .content-wraper li:hover {
+    position: relative;
+}
+
+nav .content-wraper li:hover::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    border-bottom: 2px solid var(--col-pri-white);
+    width: 50%;
 }
 
 nav .content-wraper a {
@@ -190,6 +213,10 @@ the grid */
     border-radius: 3px;
     padding: 0.5em 2.75em;
 }
+.showcase .showcase-all button:hover {
+    color: var(--col-pri-white);
+    background-color: var(--col-pri-black);
+}
 
 .showcase-item-container {
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -243,6 +270,29 @@ the grid */
 }
 .showcase-item-container .eight{
     background-image: url('images/desktop/image-fisheye.jpg');
+}
+
+/* This is a trick of setting background-image of 
+a div to have a certain opacity
+source of this fucking trick:
+https://www.youtube.com/watch?v=lRPguPbovro&t=81s
+*/
+.showcase-item-container .showcase-item:hover{
+    position: relative;
+    isolation: isolate;
+}
+
+.showcase-item-container .showcase-item:hover a{
+    color: var(--col-pri-black);
+}
+
+.showcase-item-container .showcase-item:hover::after{
+    content: '';
+    position: absolute;
+    background: var(--col-pri-white);
+    inset: 0;
+    z-index: -1;
+    opacity: .7;
 }
 
 /* footer */
@@ -306,4 +356,23 @@ footer .grid-container .grid-item.copyright {
 /** Links **/
 footer .grid-container .grid-item.nav-links {
     gap: 30px;
+}
+
+/** A fucking hack just to get bottom shorten border 
+It could be coded to be use as a class but meh.
+*/
+footer .grid-container .grid-item.nav-links li{
+    padding: 5px;
+}
+footer .grid-container .grid-item.nav-links li{
+    position: relative;
+}
+
+footer .grid-container .grid-item.nav-links:hover li:hover::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    border-bottom: 2px solid var(--col-pri-white);
+    width: 50%;
 }
