@@ -39,7 +39,6 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    max-width: 1440px;
 }
 
 /* Generic flex and grid class */
@@ -62,6 +61,7 @@ body {
 /* Header */
 header {
     background-image: url('images/desktop/image-hero.jpg');
+    background-size: cover;
     padding: 2em 0;
 }
 
@@ -509,7 +509,7 @@ footer .grid-container .grid-item.socialmedia li:hover::before{
     width them use view width for padding and font-szie */
     .hero .grid-container .grid-item {
        padding: 9vw 4vw;
-       font-size: 12vw; 
+       font-size: 95%; 
     }
 
     /* Main */
