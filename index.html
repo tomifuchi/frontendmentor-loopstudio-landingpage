@@ -46,7 +46,7 @@
     <div class="hero">
        <div class="grid-container content-wraper">
           <div class="grid-item">
-          IMMERSIVE EXPERIENCES THAT DELIVER
+           IMMERSIVE EXPERIENCES THAT DELIVER
           </div>
        </div>
     </div>
@@ -74,12 +74,14 @@
         </div>
       </div>
 
-    <div class="showcase">
-    <div class="flex-container showcase-all content-wraper">
+    <div class="grid-container showcase content-wraper">
+    <div class="grid-item showcase-tittle">
     OUR CREATIONS
+    </div>
+    <div class="grid-item showcase-btn">
     <button>SEE ALL</button>
     </div>
-    <div class="grid-container showcase-item-container content-wraper">
+    <div class="grid-item grid-container showcase-item-container content-wraper">
         <div class="flex-container showcase-item one"><a href="#">DEEP EARTH</a></div>
         <div class="flex-container showcase-item two"><a href="#">NIGHT ARCADE</a></div>
         <div class="flex-container showcase-item three"><a href="#">SOCCER TEAM VR</a></div>
@@ -116,12 +118,14 @@
   </div>
   </footer>
 <script>
+  const mb_header = document.getElementsByTagName('header')[0];
   const mb_btn = document.getElementsByClassName('mb-menu-btn')[0];
   const mb_nav = document.getElementsByTagName('nav')[0];
   const mb_nav_links = document.getElementsByClassName('nav-links')[0];
   const mb_bar = document.getElementsByClassName('mb-menu-bar');
 
   mb_btn.addEventListener('click', () => {
+    mb_header.classList.toggle('active');
     mb_nav.classList.toggle('active');
     mb_nav_links.classList.toggle('active');
     mb_bar[0].classList.toggle('active');

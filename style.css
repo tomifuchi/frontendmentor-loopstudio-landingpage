@@ -123,7 +123,7 @@ header nav .mb-menu-btn {
     height: 20px;
     width: 30px;
     top: 0.95em;
-    right: 1em;
+    right: .1em;
     display: none;
     flex-direction: column;;
     justify-content: space-between;
@@ -216,17 +216,30 @@ the grid */
 .showcase {
     padding-bottom: 7em;
 }
-.showcase .showcase-all {
+
+.showcase.grid-container{
+    grid-template-areas: 
+    "showcase-tittle showcase-btn"
+    "showcase-item-container showcase-item-container"
+    ;
+    row-gap: 6em;
+}
+
+.showcase .showcase-tittle {
+    grid-area: showcase-tittle;
     font-family: var(--font-family-josefin);
     color: var(--col-pri-black);
     font-size: 2.75em;
-    justify-content: space-between;
-    align-items:center;
-
-    padding-bottom: 2em;
+}
+.showcase .showcase-btn {
+    grid-area: showcase-btn;
+    justify-self: end;
+}
+.showcase .showcase-item-container {
+    grid-area: showcase-item-container;
 }
 
-.showcase .showcase-all button {
+.showcase .showcase-btn button{
     font-family: var(--font-family-alata);
     font-size: initial;
     color: var(--col-pri-black);
@@ -236,7 +249,8 @@ the grid */
     border-radius: 3px;
     padding: 0.5em 2.75em;
 }
-.showcase .showcase-all button:hover {
+
+.showcase .showcase-btn button:hover {
     color: var(--col-pri-white);
     background-color: var(--col-pri-black);
 }
@@ -408,15 +422,17 @@ footer .grid-container .grid-item.socialmedia li:hover::before{
 }
 
 /* Mobile layout */
-@media (max-width: 375px){
+@media (max-width: 500px){
     .content-wraper {
-        max-width: 356px;
+        max-width: 480px;
+        width: 94%;
     }
 
     /* Header */
     /* The fucking nav and transitioning to mobile layout */
     header {
-        padding: 0;
+        padding: 3vh 0;
+        background-size: cover;
     }
 
     header nav .mb-menu-btn {
@@ -431,14 +447,18 @@ footer .grid-container .grid-item.socialmedia li:hover::before{
     header .flex-container.nav-links {
         display: none;
         flex-direction: column;
-        border: 1px solid #000;
         width: 100%;
+    }
+
+    /* Oh man, this is bad code right here */
+    header.active {
+        background-image: none;
+        background-color: var(--col-pri-black);
     }
 
     header .flex-container.nav-links.active{
         background-color: var(--col-pri-black);
         display: flex;
-        border: 1px solid white;
     }
 
     header nav.active{
@@ -477,4 +497,117 @@ footer .grid-container .grid-item.socialmedia li:hover::before{
     }
 
     /** Hero **/
+    .hero {
+        padding: 10em 0;
+    }
+    .hero .grid-container.content-wraper {
+        grid-template-columns: 1fr;
+    }
+    /* In mobile it's better to use relative unit than
+    fix px this hero text here is an example */
+    /* IN this case for font size and padding to scale
+    right and keep certain style to more more or less 200px more
+    width them use view width for padding and font-szie */
+    .hero .grid-container .grid-item {
+       displaY:flex;
+       flex-direction: row wrap;
+       padding: 9vw 4vw;
+       font-size: 12vw; 
+    }
+
+    /* Main */
+    /** Interactive **/
+
+    /* In the end, flex seems to done the job here so.*/
+    .interactive .grid-container {
+        display: flex;
+        flex-flow: column wrap;
+        gap: 20px
+    }
+
+    .interactive .grid-container .grid-item.thumb img{
+        width: 100%;
+        height: auto;
+    }
+    .interactive .grid-container .grid-item.intro {
+        padding: 15vw 9vw;
+        gap: 25px;
+    }
+
+    .interactive .grid-container .grid-item.intro .intro-tittle{
+        font-size: 8.9vw;
+        text-align: center;
+    }
+    .interactive .grid-container .grid-item.intro .intro-detail{
+        text-align: center;
+        line-height: 1.25;
+        font-size: 4.8vw;
+    }
+
+    /** SHowcase **/
+    .showcase.grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "showcase-tittle"
+        "showcase-item-container"
+        "showcase-btn"
+        ;
+    }
+
+    .showcase .showcase-tittle {
+        font-size: 11.2vw;
+    }
+
+    .showcase .showcase-btn{
+        justify-self: center;
+    }
+
+    .showcase .showcase-item-container.grid-container {
+        grid-template-columns: 1fr;
+        gap: 30px 0;
+    }
+
+    .showcase-item-container .showcase-item{
+        height:27vh; 
+
+        /* flex setting */
+        justify-content: flex-start;
+        align-items: flex-end;
+
+        background-size: cover;
+        padding: 0 0 5.3vw 4.5vw;
+    }
+
+    .showcase-item-container .showcase-item a{
+        font-family: var(--font-family-josefin);
+        font-weight: 10;
+        font-size: 8.7vw;
+        color: var(--col-pri-white);
+
+    /* I should wrap this shit in a div, but meh */
+        width: 55%;
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    /* footer */
+    footer {
+        padding: 3em 0;
+    }
+    /* Changing this to flex seems easier to manage */
+    footer .grid-container {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    /** Logo **/
+    footer .grid-container .grid-item.nav-logo{
+    }
+
+   /** Links **/
+    footer .grid-container .grid-item.nav-links {
+        flex-direction: column;
+        gap: 15px;
+    }
 }
