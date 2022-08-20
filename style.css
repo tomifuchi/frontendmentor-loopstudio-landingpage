@@ -200,24 +200,22 @@ the grid */
     gap: 25px;
 
     padding: 5vw 8vw;
-    border: 1px solid #000;
 }
 
 .interactive .grid-container .grid-item.intro .intro-tittle{
     color: var(--col-pri-black);
-    font-size: 5.5vw;
+    font-size: 4vw;
 }
 .interactive .grid-container .grid-item.intro .intro-detail{
     color: var(--col-pri-dark-gray2);
     line-height: 1.25;
-    font-size: 2.5vw;
+    font-size: 1.8vw;
 }
 
 .interactive .grid-container .grid-item.thumb img{
     width: 100%;
     height: auto;
 }
- 
 
 /** Showcase **/
 .showcase {
