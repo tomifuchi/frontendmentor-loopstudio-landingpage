@@ -63,7 +63,6 @@ body {
 header {
     background-image: url('images/desktop/image-hero.jpg');
     padding: 2em 0;
-    border: 1px solid pink;
 }
 
 /** Navigation **/
