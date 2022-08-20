@@ -447,38 +447,47 @@ footer .grid-container .grid-item.socialmedia li:hover::before{
     header .flex-container.content-wraper {
         flex-direction: column;
         align-items: flex-start;
-    }
-
-    header .flex-container.nav-links {
-        display: none;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-    }
-
-    /* Oh man, this is bad code right here */
-    header.active {
-        background-image: none;
-        background-color: var(--col-pri-black);
-    }
-
-    header .flex-container.nav-links.active{
-        background-color: var(--col-pri-black);
-        display: flex;
-    }
-
-    header nav.active{
-        background-color: var(--col-pri-black);
-        height: 100vh;
-    }
-    header nav.active .flex-container.content-wraper{
         gap: 25px;
+    }
+    header .flex-container.content-wraper{
+        position: relative;
+    }
+
+    /* Yet another fucking trick
+    but this will do */
+    header .flex-container.nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 1em 0;
+        border-radius: 10px;
+        background-color: white;
+
+        position: absolute;
+        top: 3em;
+        transition: 0.3s;
+        opacity: 0;
+        transform: translateY(7%);
+    }
+
+    header .flex-container.nav-links a{
+        color: var(--col-pri-black);
+    }
+    header .flex-container.nav-links.active{
+        display: flex;
+        transition: 0.3s;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    header nav .content-wraper li:hover::before {
+        border-bottom: 2px solid var(--col-pri-black);
     }
 
     /* Fucking hamburger animation */
     header .mb-menu-bar:nth-child(1).active{
         transition: 0.3s;
-        transform: translateY(220%) rotate(-45deg);
+        transform: translateY(220%) rotate(-45deg) ;
     }
     header .mb-menu-bar:nth-child(2).active{
         transition: 0.3s;
