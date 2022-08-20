@@ -421,9 +421,8 @@ footer .grid-container .grid-item.socialmedia li:hover::before{
 }
 
 /* Mobile layout */
-@media (max-width: 500px){
+@media (max-width: 720px){
     .content-wraper {
-        max-width: 480px;
         width: 94%;
     }
 
@@ -508,8 +507,6 @@ footer .grid-container .grid-item.socialmedia li:hover::before{
     right and keep certain style to more more or less 200px more
     width them use view width for padding and font-szie */
     .hero .grid-container .grid-item {
-       displaY:flex;
-       flex-direction: row wrap;
        padding: 9vw 4vw;
        font-size: 12vw; 
     }
