@@ -199,18 +199,25 @@ the grid */
     flex-flow: column nowrap;
     gap: 25px;
 
-    padding: 5em;
+    padding: 5vw 8vw;
+    border: 1px solid #000;
 }
 
 .interactive .grid-container .grid-item.intro .intro-tittle{
     color: var(--col-pri-black);
-    font-size: 3.5em;
+    font-size: 5.5vw;
 }
 .interactive .grid-container .grid-item.intro .intro-detail{
     color: var(--col-pri-dark-gray2);
     line-height: 1.25;
-    font-size: 1.2em;
+    font-size: 2.5vw;
 }
+
+.interactive .grid-container .grid-item.thumb img{
+    width: 100%;
+    height: auto;
+}
+ 
 
 /** Showcase **/
 .showcase {
@@ -259,7 +266,7 @@ the grid */
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
 
-    gap: 25px 25px;
+    gap: 1vw;
 }
 
 .showcase-item-container .showcase-item{
@@ -270,13 +277,13 @@ the grid */
     align-items: flex-end;
 
     background-size: cover;
-    padding: 0 0 2.5em 2.5em;
+    padding: 0 0 2.5vw 2.5vw;
 }
 
 .showcase-item-container .showcase-item a{
     font-family: var(--font-family-josefin);
     font-weight: 10;
-    font-size: 2.5em;
+    font-size: 3vw;
     color: var(--col-pri-white);
 
 /* I should wrap this shit in a div, but meh */
