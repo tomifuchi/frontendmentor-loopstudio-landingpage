@@ -421,8 +421,9 @@ footer .grid-container .grid-item.socialmedia li:hover::before{
 }
 
 /* Mobile layout */
-@media (max-width: 720px){
+@media (max-width: 720px) {
     .content-wraper {
+        max-width: 720px;
         width: 94%;
     }
 
